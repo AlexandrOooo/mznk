@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .Favorite-small {
+    @apply flex justify-center items-center w-8 h-8 rounded-sm cursor-pointer transition-colors
+  }
+
+  .Favorite-big {
+    @apply flex justify-center items-center w-12 h-12 rounded-sm cursor-pointer transition-colors
+  }
+
+  .plpPriceDiscount {
+    @apply text-sm line-through opacity-50 h-5
+  }
+
+  .plpPriceNew {
+    @apply text-red-500 text-xl
+  }
+
+  .plpPrice {
+    @apply text-xl
+  }
+
+  .pdpPriceDiscount {
+    @apply text-sm line-through opacity-50 h-5
+  }
+
+  .pdpPriceNew {
+    @apply text-red-500 text-4xl
+  }
+
+  .pdpPrice {
+    @apply text-4xl mr-3
+  }
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}

@@ -20,7 +20,7 @@ const paths = [
   }
 ]
 
-export const TheNavigation: React.FC<{}> = () => {
+const TheNavigation: React.FC<{}> = () => {
   return (
     <nav className={`${styles.navigation}`}>
       <ul className={`${styles.navigationList}`}>
@@ -33,3 +33,4 @@ export const TheNavigation: React.FC<{}> = () => {
     </nav>
   )
 }
+export default TheNavigation

@@ -1,40 +1,21 @@
+'use client'
 import React from 'react'
-import { Post } from '../ThePost'
-const posts = [
-  {
-    title: 'My First Post',
-    slug: 'my-first-post',
-    price: 100,
-    discount: 10,
-    isLimited: true,
-    img: '/product1.webp',
-    isFavorite: true
-  },
-  {
-    title: 'My Second Post',
-    slug: 'my-second-post',
-    price: 100,
-    discount: 10,
-    isLimited: true,
-    img: '/product2.webp',
-    isFavorite: true
-  },
-  {
-    title: 'My Third Post',
-    slug: 'my-third-post',
-    price: 100,
-    discount: 10,
-    isLimited: true,
-    img: '/product3.webp',
-    isFavorite: true
-  }
-]
+import { ThePost } from '../ThePost'
+import styles from './styles.module.scss'
 
-export const ThePosts: React.FC<{}> = () => {
+type ThePostsProps = {
+  posts: { items: any[] }
+  isShowAll: boolean
+}
+export const ThePosts: React.FC<ThePostsProps> = ({ isShowAll, posts }) => {
+  const componentClassName = `${styles['product']} ${
+    isShowAll ? styles['showAll'] : ''
+  }`
+
   return (
-    <ul className="">
-      {posts.map((post) => (
-        <Post post={post} key={post.slug} />
+    <ul className={componentClassName}>
+      {posts.items.map((post) => (
+        <ThePost post={post} key={post.slug} />
       ))}
     </ul>
   )

@@ -1,3 +1,29 @@
 .productIMG {
   object-fit: contain;
+  height: 100px;
+  margin-bottom: 16px;
+}
+
+.product {
+  position: relative;
+  flex-basis: 16.66%;
+  flex-shrink: 0;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+
+
+.productLink {
+  padding: 16px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.productFavorite {
+  position: absolute;
+  right: 8px;
+  top: 8px;
 }
