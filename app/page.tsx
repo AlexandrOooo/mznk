@@ -1,19 +1,16 @@
 'use client'
 import TheNavigation from '@/components/TheNavigation'
-import { ThePostsHome } from '@/components/ThePostsHome'
-import { useSelector } from 'react-redux'
-import { RootState } from '@/store'
 import Sidebar from '@/components/Sidebar'
+import TheHomeProducts from '@/components/TheHomeProducts'
 
 export default function Home() {
-  const products = useSelector((state: RootState) => state.products)
   return (
     <>
       <TheNavigation />
-      {products.lists.map((list, index) => (
-        <ThePostsHome listProducts={list} key={index} />
-      ))}
-      <Sidebar />
+      <div className="flex px-8">
+        <Sidebar />
+        <TheHomeProducts />
+      </div>
     </>
   )
 }

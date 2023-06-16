@@ -6,8 +6,9 @@
 
 .product {
   position: relative;
-  flex-basis: 16.66%;
+  width: 16.66%;
   flex-shrink: 0;
+  max-width: 200px;
   border-right: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
 }

@@ -7,6 +7,10 @@
     @apply flex justify-center items-center w-8 h-8 rounded-sm cursor-pointer transition-colors
   }
 
+  .width-1200 {
+    width: 1200px;
+  }
+
   .Favorite-big {
     @apply flex justify-center items-center w-12 h-12 rounded-sm cursor-pointer transition-colors
   }
@@ -33,6 +37,11 @@
 
   .pdpPrice {
     @apply text-4xl mr-3
+  }
+
+  .container {
+    max-width: 1600px;
+    margin: 0 auto;
   }
 }
 

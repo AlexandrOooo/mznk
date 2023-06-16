@@ -8,7 +8,7 @@ type ThePostsProps = {
   isShowAll: boolean
 }
 export const ThePosts: React.FC<ThePostsProps> = ({ isShowAll, posts }) => {
-  const componentClassName = `${styles['product']} ${
+  const componentClassName = `w-full ${styles['product']} ${
     isShowAll ? styles['showAll'] : ''
   }`
 

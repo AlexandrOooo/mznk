@@ -1,7 +1,6 @@
 'use client'
 import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
-import { priceFormatter } from '@/services/price'
 import ButtonBuy from '@/components/ButtonBuy'
 import FavoriteHeart from '@/components/icons/FavoriteHeart'
 import Price from '@/components/Price'
@@ -42,7 +41,7 @@ const Page: React.FC<Params> = ({ params }: Params) => {
   })
 
   return (
-    <div>
+    <div className="container">
       <h1 className="text-3xl mb-3">{infoProduct.title}</h1>
       <div className="flex justify-between mb-4">
         <p>{infoProduct.rating}</p>
@@ -68,13 +67,6 @@ const Page: React.FC<Params> = ({ params }: Params) => {
               Продавец: {infoProduct.saller}
             </p>
             <div className="flex p-4 border-b-2 items-center border-b-slate-400 border-b-solid">
-              {/* <div>
-                <span className="">
-                  {priceFormatter(infoProduct.price, infoProduct.currency)}
-                </span>
-                {infoProduct.discount}
-                {infoProduct.inStock}
-              </div> */}
               <Price
                 priceData={{
                   price: infoProduct.price,
