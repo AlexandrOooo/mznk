@@ -1,0 +1,19 @@
+div.swiper-button-next {
+  color: black;
+  background-color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+div.swiper-button-prev {
+  color: black;
+  background-color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+html:root {
+  --swiper-navigation-size: 20px;
+}

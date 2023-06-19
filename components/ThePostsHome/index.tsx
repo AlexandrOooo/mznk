@@ -12,7 +12,7 @@ export const ThePostsHome: React.FC<Props> = ({ listProducts }) => {
   return (
     <div className="width-1200 my-0 mx-auto">
       <h2 className="font-bold text-xl mb-4">{listProducts.title}</h2>
-      <div className="flex flex-col px-2 py-0 my-0 mx-auto w-full">
+      <div className="flex flex-col my-0 mx-auto w-full">
         <ThePosts isShowAll={isShowAll} posts={listProducts} />
         {!isShowAll && (
           <button
