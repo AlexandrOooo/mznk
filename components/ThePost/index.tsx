@@ -30,7 +30,7 @@ export const ThePost: React.FC<Params> = ({ post }: Params) => {
           alt={post.title}
         />
         <p className="mb-2 text-cyan-950 text-sm self-start">{post.title}</p>
-        <p className="self-start">
+        <div className="self-start">
           <Price
             priceData={{
               price: post.price,
@@ -39,7 +39,7 @@ export const ThePost: React.FC<Params> = ({ post }: Params) => {
               pageType: 'plp'
             }}
           />
-        </p>
+        </div>
         {post.isLimited && (
           <p className="h-4 text-sm text-red-500 mt-2 self-start">Limited</p>
         )}

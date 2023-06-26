@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { useRouter } from 'next/router'
 
 const ButtonShowMore: React.FC<{
@@ -9,26 +9,30 @@ const ButtonShowMore: React.FC<{
   const router = useRouter()
   const buttonRef = useRef<HTMLButtonElement>(null)
 
-  const redirectToSale = () => {
-    router.push('/products/sale')
-  }
+  useEffect(() => {
+    const redirectToSale = () => {
+      router.push('/products/sale')
+    }
+
+    if (type === 'products') {
+      if (!onClickMoreProducts) {
+        return
+      }
+
+      buttonRef.current?.addEventListener('click', onClickMoreProducts)
+    } else if (type === 'sale') {
+      buttonRef.current?.addEventListener('click', redirectToSale)
+    }
+  }, [])
 
   let textButton = null
   if (type === 'products') {
     textButton = 'show all'
-
-    if (!onClickMoreProducts) {
-      return null
-    }
-
-    buttonRef.current?.addEventListener('click', onClickMoreProducts)
-
     if (isShowAll) {
       return null
     }
   } else if (type === 'sale') {
     textButton = 'show all sale'
-    buttonRef.current?.addEventListener('click', redirectToSale)
   }
 
   return (
