@@ -1,5 +1,7 @@
 'use client'
 import React, { useEffect, useState } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faWallet, faShieldHalved } from '@fortawesome/free-solid-svg-icons'
 import Image from 'next/image'
 import ButtonBuy from '@/components/ButtonBuy'
 import FavoriteHeart from '@/components/icons/FavoriteHeart'
@@ -27,8 +29,10 @@ const Page: React.FC<Params> = ({ params }: Params) => {
     isFavoriteSelectNumber: 200,
     salesNumber: 100,
     description: 'description',
-    guarantee: 'guarantee',
-    paymauntType: 'paymaunt',
+    guarantee:
+      'Гарантия. Законом о защите прав потребителей не предусмотрено возвращение этого товара надлежащего качества.',
+    paymauntType:
+      'Оплата. Оплата при получении товара, Оплата картой в отделении, Google Pay, Картой онлайн, -5% скидки при оплате от 500 грн картой Mastercard Универсальная/Универсальная Gold от ПриватБанк, Безналичными для юридических лиц, Оплатить онлайн социальной картой "Пакунок малюка", Безналичными для физических лиц, Apple Pay, Оплатить онлайн картой "єПідтримка", Visa, Mastercard ',
     characteristics: {
       type: 'kolbasa',
       size: 'big',
@@ -69,7 +73,7 @@ const Page: React.FC<Params> = ({ params }: Params) => {
               <p className="p-4 font-bold border-b-2 border-b-slate-400 border-b-solid">
                 Продавец: {infoProduct.saller}
               </p>
-              <div className="flex p-4 border-b-2 items-center border-b-slate-400 border-b-solid">
+              <div className="flex p-4 border-b-2 items-center gap-6 border-b-slate-400 border-b-solid">
                 <Price
                   priceData={{
                     price: infoProduct.price,
@@ -79,10 +83,12 @@ const Page: React.FC<Params> = ({ params }: Params) => {
                   }}
                 />
                 <ButtonBuy />
-                <FavoriteHeart type="big" />
-                <span className="text-xs text-slate-400">
-                  {infoProduct.isFavoriteSelectNumber}
-                </span>
+                <div className="flex items-center">
+                  <FavoriteHeart type="big" />
+                  <p className="text-xs text-slate-400">
+                    {infoProduct.isFavoriteSelectNumber}x
+                  </p>
+                </div>
               </div>
               <p className="p-4">
                 Удачная покупка!{' '}
@@ -92,9 +98,13 @@ const Page: React.FC<Params> = ({ params }: Params) => {
             </div>
             <div className="border-2 border-slate-400 border-solid">
               <p className="p-4 border-b-2 border-b-slate-400 border-b-solid">
+                <FontAwesomeIcon icon={faWallet} />
                 {infoProduct.paymauntType}
               </p>
-              <p className="p-4 ">{infoProduct.guarantee}</p>
+              <p className="p-4 ">
+                <FontAwesomeIcon icon={faShieldHalved} />
+                {infoProduct.guarantee}
+              </p>
             </div>
           </div>
         </div>
