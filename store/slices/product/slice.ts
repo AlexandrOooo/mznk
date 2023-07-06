@@ -259,7 +259,7 @@ const initialState: ProductsSliceState = {
   ]
 }
 const productSlice = createSlice({
-  name: 'cart',
+  name: 'product',
   initialState,
   reducers: {}
 })
