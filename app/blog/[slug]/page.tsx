@@ -7,6 +7,8 @@ import ButtonBuy from '@/components/ButtonBuy'
 import FavoriteHeart from '@/components/icons/FavoriteHeart'
 import Price from '@/components/Price'
 import TheNavigation from '@/components/TheNavigation'
+import Characteristics from '@/components/Characteristics'
+
 type Params = {
   params: {
     slug: string
@@ -33,15 +35,61 @@ const Page: React.FC<Params> = ({ params }: Params) => {
       'Гарантия. Законом о защите прав потребителей не предусмотрено возвращение этого товара надлежащего качества.',
     paymauntType:
       'Оплата. Оплата при получении товара, Оплата картой в отделении, Google Pay, Картой онлайн, -5% скидки при оплате от 500 грн картой Mastercard Универсальная/Универсальная Gold от ПриватБанк, Безналичными для юридических лиц, Оплатить онлайн социальной картой "Пакунок малюка", Безналичными для физических лиц, Apple Pay, Оплатить онлайн картой "єПідтримка", Visa, Mastercard ',
-    characteristics: {
-      type: 'kolbasa',
-      size: 'big',
-      destination: 'cat',
-      class: 'econom',
-      weight: '1kg',
-      countryRegistration: 'ukraina',
-      countryProduction: 'ukraina'
-    },
+    characteristics: [
+      {
+        name: 'type',
+        value: 'kolbasa',
+        important: true
+      },
+      {
+        name: 'size',
+        value: 'big',
+        important: true
+      },
+      {
+        name: 'destination',
+        value: 'cat',
+        important: true
+      },
+      {
+        name: 'class',
+        value: 'econom',
+        important: true
+      },
+      {
+        name: 'weight',
+        value: '1kg',
+        important: false
+      },
+      {
+        name: 'countryRegistration',
+        value: 'ukraina',
+        important: false
+      },
+      {
+        name: 'countryProduction',
+        value: 'ukraina',
+        important: false
+      },
+      {
+        name: 'count',
+        value: 1,
+        important: false
+      },
+      {
+        name: 'features',
+        value: ['features', 'features', 'features'],
+        important: false
+      },
+      // width: null,
+      // height: null,
+      // color: null,
+      {
+        name: 'dayOfGarantee',
+        value: 14,
+        important: false
+      }
+    ],
     slug: params.slug
   })
 
@@ -109,9 +157,10 @@ const Page: React.FC<Params> = ({ params }: Params) => {
           </div>
         </div>
         <div>
-          {infoProduct.characteristics.type}
-          {infoProduct.characteristics.size}
-          {infoProduct.characteristics.destination}
+          <Characteristics
+            characteristics={infoProduct.characteristics}
+            viewSize="smallSize"
+          />
         </div>
       </div>
     </>
