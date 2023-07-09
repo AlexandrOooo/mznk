@@ -1,18 +1,9 @@
 "use client";
-import React, { useEffect, useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faWallet, faShieldHalved } from "@fortawesome/free-solid-svg-icons";
-import Image from "next/image";
-import Characteristics from "@/components/Characteristics";
-import BuySection from "@/components/BuySection";
-import SellerSection from "@/components/SellerSection";
-type Params = {
-  params: {
-    slug: string;
-  };
-};
+import React, { useState } from "react";
+import PLPHeader from "@/components/PLPHeader";
+import TheNavigation from "@/components/TheNavigation";
 
-const Page: React.FC<Params> = ({ params }: Params) => {
+const layout: React.FC<{ children: any }> = ({ children }) => {
   const [infoProduct, setInfoProduct] = useState({
     title:
       "Сухой корм для котят Club 4 Paws (Клуб 4 Лапы) Премиум со вкусом курицы 5 кг (4820083909108)(B4651001)",
@@ -87,51 +78,15 @@ const Page: React.FC<Params> = ({ params }: Params) => {
         important: false,
       },
     ],
-    slug: params.slug,
   });
-
   return (
     <>
-      <div className="flex justify-between">
-        <div className="basis-1/2">
-          {
-            <Image
-              width="100"
-              height="100"
-              src={infoProduct.photos[0]}
-              alt={infoProduct.title}
-            />
-          }
-        </div>
-        <div className="basis-1/2">
-          <div className="rounded border-2 border-slate-400 border-solid mb-8">
-            <SellerSection infoProduct={infoProduct} />
-            <BuySection infoProduct={infoProduct} />
-            <p className="p-4">
-              Удачная покупка!{" "}
-              <span className="font-bold">{infoProduct.salesNumber}</span>{" "}
-              купили цей товар повторно
-            </p>
-          </div>
-          <div className="border-2 border-slate-400 border-solid">
-            <p className="p-4 border-b-2 border-b-slate-400 border-b-solid">
-              <FontAwesomeIcon icon={faWallet} />
-              {infoProduct.paymauntType}
-            </p>
-            <p className="p-4 ">
-              <FontAwesomeIcon icon={faShieldHalved} />
-              {infoProduct.guarantee}
-            </p>
-          </div>
-        </div>
-      </div>
-      <div>
-        <Characteristics
-          characteristics={infoProduct.characteristics}
-          viewSize="smallSize"
-        />
+      <TheNavigation />
+      <div className="container">
+        <PLPHeader infoProduct={infoProduct} />
+        {children}
       </div>
     </>
   );
 };
-export default Page;
+export default layout;
