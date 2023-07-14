@@ -8,7 +8,7 @@ import FavoriteHeart from '@/components/icons/FavoriteHeart'
 import Price from '@/components/Price'
 import TheNavigation from '@/components/TheNavigation'
 import Characteristics from '@/components/Characteristics'
-
+import Review from '@/components/Review'
 type Params = {
   params: {
     slug: string
