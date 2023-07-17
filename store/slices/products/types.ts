@@ -13,5 +13,6 @@ export interface ProductSliceState {
 }
 
 export interface ProductsSliceState {
-  lists: ProductSliceState[]
+  lists: ProductSliceState[] | null
+  status: "error" | "success" | "loading"
 }

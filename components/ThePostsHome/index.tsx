@@ -1,8 +1,8 @@
-'use client'
-import React, { useState } from 'react'
-import { ThePosts } from '../ThePosts'
-import { ProductSliceState } from '@/store/slices/product/types'
-import ButtonShowMore from '@/components/ButtonShowMore'
+"use client"
+import React, { useState } from "react"
+import { ThePosts } from "../ThePosts"
+import { ProductSliceState } from "@/store/slices/products/types"
+import ButtonShowMore from "@/components/ButtonShowMore"
 
 type Props = {
   listProducts: ProductSliceState
