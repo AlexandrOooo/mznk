@@ -1,5 +1,6 @@
 export interface CommentSliceState {
   commentId: number
+  productId: number
   reviewName: string
   date: string
   rating: number

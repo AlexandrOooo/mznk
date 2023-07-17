@@ -1,6 +1,6 @@
 export type ProductItemProps = {
   title: string
-  slug: string
+  id: string
   price: number
   discount: number
   isLimited: boolean

@@ -1,9 +1,9 @@
-import React from 'react'
-import Link from 'next/link'
-import Image from 'next/image'
-import styles from './styles.module.scss'
-import FavoriteHeart from '../icons/FavoriteHeart'
-import Price from '@/components/Price'
+import React from "react"
+import Link from "next/link"
+import Image from "next/image"
+import styles from "./styles.module.scss"
+import FavoriteHeart from "../icons/FavoriteHeart"
+import Price from "@/components/Price"
 
 type Params = {
   post: {
@@ -20,10 +20,10 @@ type Params = {
 
 export const ThePost: React.FC<Params> = ({ post }: Params) => {
   return (
-    <li className={styles['product']}>
-      <Link href={`/blog/${post.slug}`} className={styles['productLink']}>
+    <li className={styles["product"]}>
+      <Link href={`/product/${post.slug}`} className={styles["productLink"]}>
         <Image
-          className={styles['productIMG']}
+          className={styles["productIMG"]}
           width="100"
           height="100"
           src={post.img}
@@ -36,7 +36,7 @@ export const ThePost: React.FC<Params> = ({ post }: Params) => {
               price: post.price,
               discount: post.discount,
               currency: post.currency,
-              pageType: 'plp'
+              pageType: "plp",
             }}
           />
         </div>
@@ -45,7 +45,7 @@ export const ThePost: React.FC<Params> = ({ post }: Params) => {
         )}
       </Link>
       <FavoriteHeart
-        additionalClassName={`${styles['productFavorite']} `}
+        additionalClassName={`${styles["productFavorite"]} `}
         type="small"
       />
     </li>
