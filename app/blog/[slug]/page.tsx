@@ -3,7 +3,12 @@ import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faWallet, faShieldHalved } from "@fortawesome/free-solid-svg-icons";
 import Image from "next/image";
+import ButtonBuy from "@/components/ButtonBuy";
+import FavoriteHeart from "@/components/icons/FavoriteHeart";
+import Price from "@/components/Price";
+import TheNavigation from "@/components/TheNavigation";
 import Characteristics from "@/components/Characteristics";
+import Review from "@/components/Review";
 import BuySection from "@/components/BuySection";
 import SellerSection from "@/components/SellerSection";
 type Params = {
