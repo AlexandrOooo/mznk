@@ -8,7 +8,7 @@ import Price from "@/components/Price"
 type Params = {
   post: {
     title: string
-    slug: string
+    id: string
     price: number
     discount: number
     isLimited: boolean
@@ -21,7 +21,7 @@ type Params = {
 export const ThePost: React.FC<Params> = ({ post }: Params) => {
   return (
     <li className={styles["product"]}>
-      <Link href={`/product/${post.slug}`} className={styles["productLink"]}>
+      <Link href={`/product/${post.id}`} className={styles["productLink"]}>
         <Image
           className={styles["productIMG"]}
           width="100"

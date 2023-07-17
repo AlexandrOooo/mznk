@@ -7,12 +7,12 @@ export type ProductItemProps = {
   img: string
 }
 
-export interface ProductSliceState {
+export interface ProductSlice {
   items: ProductItemProps[]
   title: string
 }
 
 export interface ProductsSliceState {
-  lists: ProductSliceState[] | null
+  lists: ProductSlice[]
   status: "error" | "success" | "loading"
 }

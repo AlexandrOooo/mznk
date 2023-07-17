@@ -1,4 +1,4 @@
-export interface CommentSliceState {
+export interface CommentSlice {
   commentId: number
   productId: number
   reviewName: string
@@ -11,6 +11,8 @@ export interface CommentSliceState {
   advantages: string[]
   disadvantages: string[]
 }
+
 export interface CommentsSliceState {
-  comments: CommentSliceState[]
+  items: CommentSlice[]
+  status: "error" | "success" | "loading"
 }
