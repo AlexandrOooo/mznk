@@ -1,17 +1,17 @@
-import { Pagination, Navigation } from 'swiper'
-import './style.scss'
+import { Pagination, Navigation } from "swiper"
+import "./style.scss"
 
-import { Swiper, SwiperSlide } from 'swiper/react'
-import Image from 'next/image'
-import 'swiper/css'
-import 'swiper/css/navigation'
-import 'swiper/css/pagination'
-import ButtonShowMore from '../ButtonShowMore'
+import { Swiper, SwiperSlide } from "swiper/react"
+import Image from "next/image"
+import "swiper/css"
+import "swiper/css/navigation"
+import "swiper/css/pagination"
+import ButtonShowMore from "../ButtonShowMore"
 
 const HomeSwiper = () => {
   return (
     <>
-      <div className="width-1200">
+      <div className="w-[1200px]">
         <Swiper
           modules={[Pagination, Navigation]}
           spaceBetween={50}
@@ -20,7 +20,8 @@ const HomeSwiper = () => {
           loop={true}
           pagination={{ clickable: true }}
           onSwiper={(swiper) => console.log(swiper)}
-          onSlideChange={() => console.log('slide change')}>
+          onSlideChange={() => console.log("slide change")}
+        >
           <SwiperSlide>
             <Image
               width={1270}

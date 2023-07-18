@@ -8,8 +8,8 @@ type ThePostsProps = {
   isShowAll: boolean
 }
 export const ThePosts: React.FC<ThePostsProps> = ({ isShowAll, posts }) => {
-  const componentClassName = `w-full ${styles["product"]} ${
-    isShowAll ? styles["showAll"] : ""
+  const componentClassName = `w-full flex flex-nowrap overflow-hidden list-none ${
+    isShowAll ? "flex=wrap" : ""
   }`
 
   return (

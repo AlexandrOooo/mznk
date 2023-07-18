@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <>
       <TheNavigation />
-      <div className="flex px-8 mx-auto my-0 width-1520">
+      <div className="flex px-8 mx-auto my-0 w-[1520px]">
         <Sidebar />
         <TheHomeProducts />
       </div>

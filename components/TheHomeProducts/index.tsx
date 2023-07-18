@@ -14,7 +14,7 @@ export const Index: React.FC<{}> = () => {
   }, [])
 
   return (
-    <div className="flex flex-col width-1200 pt-10 pl-10 box-content">
+    <div className="flex flex-col w-[1200px] pt-10 pl-10 box-content">
       <HomeSwiper />
       <div>
         {products.lists.map((list, index) => (

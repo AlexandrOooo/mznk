@@ -1,9 +1,9 @@
-import React from 'react'
-import SearchIcon from '../icons/searchIcon'
+import React from "react"
+import SearchIcon from "../icons/searchIcon"
 
 export const index: React.FC<{}> = () => {
   return (
-    <div className="flex items-center w-15 width-750">
+    <div className="flex items-center w-[750px]">
       <div className="rounded-l grow relative bg-white ">
         <span className="left-2 absolute top-3">
           <SearchIcon />
@@ -17,7 +17,8 @@ export const index: React.FC<{}> = () => {
 
       <button
         className="bg-green-700 text-white h-10 rounded-r p-4
-      flex items-center justify-center">
+      flex items-center justify-center"
+      >
         Знайти
       </button>
     </div>

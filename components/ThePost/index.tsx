@@ -20,10 +20,13 @@ type Params = {
 
 export const ThePost: React.FC<Params> = ({ post }: Params) => {
   return (
-    <li className={styles["product"]}>
-      <Link href={`/product/${post.id}`} className={styles["productLink"]}>
+    <li className="relative w-1/6 shrink-0 max-w-[200px] border-r-[1px] border-gray-300 border-b-[1px]">
+      <Link
+        href={`/product/${post.id}`}
+        className="p-4 w-full flex flex-col items-center justify-center"
+      >
         <Image
-          className={styles["productIMG"]}
+          className="object-contain h-[100px] mb-4"
           width="100"
           height="100"
           src={post.img}
@@ -45,7 +48,7 @@ export const ThePost: React.FC<Params> = ({ post }: Params) => {
         )}
       </Link>
       <FavoriteHeart
-        additionalClassName={`${styles["productFavorite"]} `}
+        additionalClassName="absolute right-2 top-2"
         type="small"
       />
     </li>
