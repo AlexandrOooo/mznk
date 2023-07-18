@@ -1,9 +1,10 @@
-import React from "react";
-import ButtonBuy from "@/components/ButtonBuy";
-import FavoriteHeart from "@/components/icons/FavoriteHeart";
-import Price from "@/components/Price";
+import React from "react"
+import ButtonBuy from "@/components/ButtonBuy"
+import FavoriteHeart from "@/components/icons/FavoriteHeart"
+import Price from "@/components/Price"
+import { ProductProps } from "@/components/types"
 
-const index: React.FC<{ infoProduct: any }> = ({ infoProduct }) => {
+const index: React.FC<ProductProps> = ({ infoProduct }) => {
   return (
     <div className="flex p-4 border-b-2 items-center gap-6 border-b-slate-400 border-b-solid">
       <Price
@@ -22,7 +23,7 @@ const index: React.FC<{ infoProduct: any }> = ({ infoProduct }) => {
         </p>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default index;
+export default index

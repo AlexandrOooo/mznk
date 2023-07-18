@@ -1,6 +1,7 @@
-import React from "react";
+import React from "react"
+import { ProductProps } from "@/components/types"
 
-const index: React.FC<{ infoProduct: any }> = ({ infoProduct }) => {
+const index: React.FC<ProductProps> = ({ infoProduct }) => {
   return (
     <>
       <h1 className="text-3xl mb-3">{infoProduct.title}</h1>
@@ -12,6 +13,6 @@ const index: React.FC<{ infoProduct: any }> = ({ infoProduct }) => {
         </p>
       </div>
     </>
-  );
-};
-export default index;
+  )
+}
+export default index

@@ -1,25 +1,23 @@
-'use client'
-import React from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+"use client"
+import React from "react"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {
   faThumbsUp,
   faThumbsDown,
-  faBasketShopping
-} from '@fortawesome/free-solid-svg-icons'
-import StarRating from '../StarRating'
-import { CommentSliceState } from '@/store/slices/comments/types'
-import { useDispatch } from 'react-redux'
+  faBasketShopping,
+} from "@fortawesome/free-solid-svg-icons"
+import StarRating from "../StarRating"
+import { CommentProps } from "@/components/types"
+import { useDispatch } from "react-redux"
 import {
   setLikesForComment,
-  setDislikesForComment
-} from '@/store/slices/comments/slice'
+  setDislikesForComment,
+} from "@/store/slices/comments/slice"
 
-const Index: React.FC<{ infoComment: CommentSliceState }> = ({
-  infoComment
-}) => {
+const Index: React.FC<CommentProps> = ({ infoComment }) => {
   const dispatch = useDispatch()
   const transformProperties = (properties: string[]) => {
-    return properties.join(', ')
+    return properties.join(", ")
   }
 
   return (
@@ -48,7 +46,7 @@ const Index: React.FC<{ infoComment: CommentSliceState }> = ({
         <div>
           <h5 className="text-lg font-bold mb-2">Disadvantages:</h5>
           <p className="text-sm">
-            {' '}
+            {" "}
             {transformProperties(infoComment.disadvantages)}
           </p>
         </div>
@@ -56,15 +54,15 @@ const Index: React.FC<{ infoComment: CommentSliceState }> = ({
       <div className="flex justify-end p-3 border-t-2  border-neutral-400 gap-3">
         <div
           className="flex items-center cursor-pointer"
-          onClick={() => dispatch(setLikesForComment(infoComment.commentId))}>
+          onClick={() => dispatch(setLikesForComment(infoComment.commentId))}
+        >
           <FontAwesomeIcon icon={faThumbsUp} />
           <p className="ml-1">{infoComment.likes}</p>
         </div>
         <div
           className="flex items-center cursor-pointer"
-          onClick={() =>
-            dispatch(setDislikesForComment(infoComment.commentId))
-          }>
+          onClick={() => dispatch(setDislikesForComment(infoComment.commentId))}
+        >
           <FontAwesomeIcon icon={faThumbsDown} />
           <p className="ml-1">{infoComment.dislikes}</p>
         </div>

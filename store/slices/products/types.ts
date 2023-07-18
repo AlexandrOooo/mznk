@@ -1,14 +1,15 @@
-export type ProductItemProps = {
+export type ProductItem = {
   title: string
   id: string
   price: number
   discount: number
   isLimited: boolean
   img: string
+  currency: string
 }
 
 export interface ProductSlice {
-  items: ProductItemProps[]
+  items: ProductItem[]
   title: string
 }
 
