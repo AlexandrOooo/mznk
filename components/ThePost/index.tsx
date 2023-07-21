@@ -4,9 +4,9 @@ import Image from "next/image"
 import styles from "./styles.module.scss"
 import FavoriteHeart from "../icons/FavoriteHeart"
 import Price from "@/components/Price"
-import { ProductProps } from "@/components/types"
+import { CardProductProps } from "@/components/types"
 
-export const ThePost: React.FC<ProductProps> = ({ infoProduct }) => {
+export const ThePost: React.FC<CardProductProps> = ({ infoProduct }) => {
   return (
     <li className="relative w-1/6 shrink-0 max-w-[200px] border-r-[1px] border-gray-300 border-b-[1px]">
       <Link
