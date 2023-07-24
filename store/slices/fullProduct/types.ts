@@ -21,6 +21,7 @@ export interface FullProductSlice {
   description: string
   guarantee: string
   paymauntType: string
+  isFavorite: boolean
   characteristics: Characteristics[]
 }
 export interface FullProductSliceState {

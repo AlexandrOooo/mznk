@@ -6,6 +6,7 @@ export type ProductItem = {
   isLimited: boolean
   img: string
   currency: string
+  isFavorite: boolean
 }
 
 export interface ProductSlice {

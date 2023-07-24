@@ -5,8 +5,12 @@ import styles from "./styles.module.scss"
 import FavoriteHeart from "../icons/FavoriteHeart"
 import Price from "@/components/Price"
 import { CardProductProps } from "@/components/types"
+import { useAppDispatch } from "@/store"
+import { toggleToFavorites } from "@/store/slices/favorites/slice"
 
 export const ThePost: React.FC<CardProductProps> = ({ infoProduct }) => {
+  const dispatch = useAppDispatch()
+
   return (
     <li className="relative w-1/6 shrink-0 max-w-[200px] border-r-[1px] border-gray-300 border-b-[1px]">
       <Link
@@ -40,6 +44,8 @@ export const ThePost: React.FC<CardProductProps> = ({ infoProduct }) => {
       <FavoriteHeart
         additionalClassName="absolute right-2 top-2"
         type="small"
+        favorite={infoProduct.isFavorite}
+        onChangeFavorite={() => dispatch(toggleToFavorites(infoProduct))}
       />
     </li>
   )

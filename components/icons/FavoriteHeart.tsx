@@ -1,24 +1,26 @@
-'use client'
+"use client"
 
-import React, { useState, useEffect } from 'react'
-import styles from './styles.module.scss'
+import React, { useState, useEffect } from "react"
+import styles from "./styles.module.scss"
 
 const FavoriteHeart: React.FC<{
   type: string
   additionalClassName?: string
-}> = ({ type, additionalClassName = '' }) => {
-  const [isFavorite, setIsFavorite] = useState(false)
-  const [classNameFavorite, setClassNameFavorite] = useState('')
+  favorite?: boolean
+  onChangeFavorite?: () => void
+}> = ({ type, additionalClassName = "", favorite, onChangeFavorite }) => {
+  const [isFavorite, setIsFavorite] = useState(favorite)
+  const [classNameFavorite, setClassNameFavorite] = useState("")
   const [classNameFavoriteContainer, setClassNameFavoriteContainer] =
-    useState('')
+    useState("")
 
   useEffect(() => {
     const createClassNameFavorite = () => {
-      let result = ''
+      let result = ""
       if (isFavorite) {
-        result = `${styles['favoriteHeart']} ${styles['isFavorite']}`
+        result = `${styles["favoriteHeart"]} ${styles["isFavorite"]}`
       } else {
-        result = styles['favoriteHeart']
+        result = styles["favoriteHeart"]
       }
       return result
     }
@@ -29,10 +31,10 @@ const FavoriteHeart: React.FC<{
   useEffect(() => {
     const createClassNameFavoriteContainer = () => {
       let result = additionalClassName
-      if (type === 'small') {
-        result += ' Favorite-small hover:bg-amber-100'
-      } else if (type === 'big') {
-        result += ' Favorite-big hover:bg-amber-100'
+      if (type === "small") {
+        result += " Favorite-small hover:bg-amber-100"
+      } else if (type === "big") {
+        result += " Favorite-big hover:bg-amber-100"
       }
       return result
     }
@@ -40,20 +42,17 @@ const FavoriteHeart: React.FC<{
     setClassNameFavoriteContainer(() => createClassNameFavoriteContainer())
   }, [type, additionalClassName])
 
-  const onFavorite = () => {
-    setIsFavorite(() => !isFavorite)
-  }
-
   return (
     <div className={classNameFavoriteContainer}>
       <svg
         className={classNameFavorite}
-        onClick={onFavorite}
+        onClick={onChangeFavorite}
         width="24px"
         height="24px"
         viewBox="0 0 24 24"
         fill="none"
-        xmlns="http://www.w3.org/2000/svg">
+        xmlns="http://www.w3.org/2000/svg"
+      >
         <g id="Interface / Heart_01">
           <path
             id="Vector"
