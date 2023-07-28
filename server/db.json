@@ -9,7 +9,8 @@
           "discount": 90,
           "isLimited": false,
           "img": "/product1.webp",
-          "currency": "USD"
+          "currency": "USD",
+          "isFavorite": false
         },
         {
           "title": "My Second Post",

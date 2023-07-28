@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit"
 import { fetchProducts } from "./requests"
 import { ProductsSliceState } from "./types"
+import { setMaxListeners } from "events"
 
 const initialState: ProductsSliceState = {
   lists: [],
@@ -9,7 +10,21 @@ const initialState: ProductsSliceState = {
 const productSlice = createSlice({
   name: "product",
   initialState,
-  reducers: {},
+  reducers: {
+    toggleIsFavoriteForOneProduct: (state, action) => {
+      let findFavorite = null
+      for (const list of state.lists) {
+        findFavorite = list.items.find((item) => item.id === action.payload)
+        if (findFavorite) {
+          break
+        }
+      }
+      if (findFavorite) {
+        findFavorite.isFavorite = true
+      }
+      console.log("toggleIsFavoriteForOneProduct", findFavorite, state)
+    },
+  },
 
   extraReducers: (builder) => {
     builder.addCase(fetchProducts.fulfilled, (state, action) => {
@@ -26,5 +41,5 @@ const productSlice = createSlice({
     })
   },
 })
-// export const { addItem, removeItem, clearCart, minusItem } = cartSlice.actions
+export const { toggleIsFavoriteForOneProduct } = productSlice.actions
 export default productSlice.reducer

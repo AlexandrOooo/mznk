@@ -16,3 +16,11 @@ export const fetchDeleteFavorite = createAsyncThunk<
   const { data } = await axios.delete(`http://localhost:3420/favorites?=${id}`)
   return data
 })
+
+export const fetchFavorites = createAsyncThunk<FullProductSlice[]>(
+  "favorites/fetchFavorites",
+  async () => {
+    const { data } = await axios.get(`http://localhost:3420/favorites`)
+    return data
+  }
+)

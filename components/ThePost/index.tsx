@@ -1,15 +1,23 @@
-import React from "react"
+"use client"
+import React, { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import styles from "./styles.module.scss"
 import FavoriteHeart from "../icons/FavoriteHeart"
 import Price from "@/components/Price"
 import { CardProductProps } from "@/components/types"
 import { useAppDispatch } from "@/store"
 import { toggleToFavorites } from "@/store/slices/favorites/slice"
+import { toggleIsFavoriteForOneProduct } from "@/store/slices/products/slice"
 
 export const ThePost: React.FC<CardProductProps> = ({ infoProduct }) => {
   const dispatch = useAppDispatch()
+  const [isFavoriteCard, setIsFavoriteCard] = useState(infoProduct.isFavorite)
+  const onClickFavorite = () => {
+    dispatch(toggleIsFavoriteForOneProduct(infoProduct.id))
+    setIsFavoriteCard((prev) => !prev)
+    dispatch(toggleToFavorites(infoProduct))
+    console.log("isFavoriteCard", infoProduct)
+  }
 
   return (
     <li className="relative w-1/6 shrink-0 max-w-[200px] border-r-[1px] border-gray-300 border-b-[1px]">
@@ -44,8 +52,8 @@ export const ThePost: React.FC<CardProductProps> = ({ infoProduct }) => {
       <FavoriteHeart
         additionalClassName="absolute right-2 top-2"
         type="small"
-        favorite={infoProduct.isFavorite}
-        onChangeFavorite={() => dispatch(toggleToFavorites(infoProduct))}
+        favorite={isFavoriteCard}
+        onChangeFavorite={onClickFavorite}
       />
     </li>
   )

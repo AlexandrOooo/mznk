@@ -9,7 +9,6 @@ const FavoriteHeart: React.FC<{
   favorite?: boolean
   onChangeFavorite?: () => void
 }> = ({ type, additionalClassName = "", favorite, onChangeFavorite }) => {
-  const [isFavorite, setIsFavorite] = useState(favorite)
   const [classNameFavorite, setClassNameFavorite] = useState("")
   const [classNameFavoriteContainer, setClassNameFavoriteContainer] =
     useState("")
@@ -17,16 +16,15 @@ const FavoriteHeart: React.FC<{
   useEffect(() => {
     const createClassNameFavorite = () => {
       let result = ""
-      if (isFavorite) {
+      if (favorite) {
         result = `${styles["favoriteHeart"]} ${styles["isFavorite"]}`
       } else {
         result = styles["favoriteHeart"]
       }
       return result
     }
-
     setClassNameFavorite(() => createClassNameFavorite())
-  }, [isFavorite])
+  }, [favorite])
 
   useEffect(() => {
     const createClassNameFavoriteContainer = () => {
