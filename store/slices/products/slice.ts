@@ -19,10 +19,16 @@ const productSlice = createSlice({
           break
         }
       }
-      if (findFavorite) {
+
+      if (!findFavorite) {
+        return
+      }
+
+      if (findFavorite.isFavorite) {
+        findFavorite.isFavorite = false
+      } else {
         findFavorite.isFavorite = true
       }
-      console.log("toggleIsFavoriteForOneProduct", findFavorite, state)
     },
   },
 

@@ -22,19 +22,14 @@ const favoritesSlice = createSlice({
         state.items = state.items.filter(
           (card) => card.id === action.payload.id
         )
-        findFavorite.isFavorite = false
         fetchDeleteFavorite(action.payload.id)
       } else {
-        // const newFavorite = { ...action.payload, isFavorite: true }
         state.items.push(action.payload)
         fetchAddFavorite(action.payload.id)
       }
     },
   },
   extraReducers: (builder) => {
-    // builder.addCase(fetchAddFavorite.fulfilled, (state, action) => {
-    //   state.items.push(action.payload)
-    // })
     builder.addCase(fetchFavorites.fulfilled, (state, action) => {
       state.items = action.payload
     })

@@ -8,7 +8,7 @@ import { useAppDispatch } from "@/store"
 
 export const Index: React.FC<{}> = () => {
   const dispatch = useAppDispatch()
-  const products = useSelector((state: RootState) => state.products)
+  const products = useSelector((state: RootState) => state.products.lists)
   useEffect(() => {
     dispatch(fetchProducts())
   }, [])
@@ -17,7 +17,7 @@ export const Index: React.FC<{}> = () => {
     <div className="flex flex-col w-[1200px] pt-10 pl-10 box-content">
       <HomeSwiper />
       <div>
-        {products.lists.map((list, index) => (
+        {products.map((list, index) => (
           <ThePostsHome listProducts={list} key={index} />
         ))}
       </div>

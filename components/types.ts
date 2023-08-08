@@ -4,4 +4,4 @@ import { ProductItem, ProductSlice } from "@/store/slices/products/types"
 export type ProductProps = { infoProduct: FullProductSlice }
 export type CardProductProps = { infoProduct: ProductItem }
 export type CommentProps = { infoComment: CommentSlice }
-export type ProductListProps = { listProducts: ProductSlice }
+export type ProductListProps = { listProducts: ProductItem[] }

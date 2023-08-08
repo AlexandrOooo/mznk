@@ -11,10 +11,8 @@ import { toggleIsFavoriteForOneProduct } from "@/store/slices/products/slice"
 
 export const ThePost: React.FC<CardProductProps> = ({ infoProduct }) => {
   const dispatch = useAppDispatch()
-  const [isFavoriteCard, setIsFavoriteCard] = useState(infoProduct.isFavorite)
   const onClickFavorite = () => {
     dispatch(toggleIsFavoriteForOneProduct(infoProduct.id))
-    setIsFavoriteCard((prev) => !prev)
     dispatch(toggleToFavorites(infoProduct))
     console.log("isFavoriteCard", infoProduct)
   }
@@ -52,7 +50,7 @@ export const ThePost: React.FC<CardProductProps> = ({ infoProduct }) => {
       <FavoriteHeart
         additionalClassName="absolute right-2 top-2"
         type="small"
-        favorite={isFavoriteCard}
+        favorite={infoProduct.isFavorite}
         onChangeFavorite={onClickFavorite}
       />
     </li>

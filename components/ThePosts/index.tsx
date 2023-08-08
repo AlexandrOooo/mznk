@@ -13,7 +13,7 @@ export const ThePosts: React.FC<ThePostsProps> = ({
 
   return (
     <ul className={componentClassName}>
-      {listProducts.items.map((post) => (
+      {listProducts.map((post) => (
         <ThePost infoProduct={post} key={post.id} />
       ))}
     </ul>
